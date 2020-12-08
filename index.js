@@ -58,7 +58,7 @@ app.post('/create-todo', function (req, res) {
         console.log(`******`, newList);
         console.log('res->', res);
         res.sendStatus = 200;
-        return res.redirect('back');
+        return res.redirect('/');
     })
 });
 
@@ -72,7 +72,7 @@ app.get('/delete-multiple-todo', function (req, res) {
             console.log('error in deleting the object');
             return;
         }
-        return res.redirect('back');
+        return res.redirect('/');
     });
 });
 
