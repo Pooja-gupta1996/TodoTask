@@ -80,3 +80,7 @@ overflow: hidden;
 #aside, .deleteTask{
 text-align: center;
 }
+#edit-button{
+    cursor: pointer;
+    color: blue;
+}

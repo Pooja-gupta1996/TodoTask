@@ -8,6 +8,7 @@ const todo_list = require('./models/todo');
 app.set('view engine', 'ejs');
 app.use(express.urlencoded());
 app.use(express.static('assets'));
+var edit=app.locals
 
 
 //Controller 1 ->On the home page we show the list of all todo list

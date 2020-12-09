@@ -53,7 +53,7 @@
             </form>
             <!-- Creating new Todo Task end -->
         </main>
-          <!-- Filter Todo Task -->
+        <!-- Filter Todo Task -->
         <aside class="col-sm" id="aside">
             <label>Filter by category : </label><br>
             <select id="category" name="Category" onmousedown="this.value='';" onchange="filter(this.value)">
@@ -88,6 +88,7 @@
                                 <th scope="col" class="format-data-in-table">Select Task</th>
                                 <th scope="col" class="format-data-in-table">Task Description</th>
                                 <th scope="col" class="format-data-in-table">Category</th>
+                                <th scope="col" class="format-data-in-table">Edit</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -96,29 +97,33 @@
                             <tr>
                                 <td>
                                     <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" onclick="checkbox(value)" id="<%= i.Due_Date %>"
-                                            name="id" value="<%= i._id %>">
+                                        <input type="checkbox" onclick="checkbox(value)" id="<%= i._id %>"
+                                            name="<%= i._id %>" value="<%= i._id %>">
                                     </div>
                                 </td>
                                 <!-- You can even Update The todo task -->
-                                <td><a onclick="myFunction()"
-                                        href="/getbyId/?id=<%= i.id %>"><%= i.Description %></a><br>
+                                <td><%= i.Description %><br>
                                     <p id="format-date"><i class="fa fa-calendar"
                                             aria-hidden="true"></i>&nbsp;&nbsp;<%= i.Due_Date %></p>
                                 </td>
                                 <td class="format-data-in-table">
                                     <p id="cat"><%= i.Category %></p>
                                 </td>
+                                <td class="format-data-in-table" id="edit-button">
+                                    <a onclick="myFunction('<%=i._id%>')"
+                                        ><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                                </td>
                             </tr>
                             <% } %>
                         </tbody>
-                    </table>
+                    </table>    
+                </form>
             </div>
         </div>
     </div>
     <% } %>
     <!-- table end -->
-    </form>
     <script type="text/javascript" src="/js/home.js"></script>
 </body>
+
 </html>
